@@ -4,7 +4,7 @@ const User = require("/opt/nodejs/user.js");
 exports.handler = async (event) => {
 	try {
 		await connectMongoose();
-		const u = await User.find(event);
+		const u = await User.create(event);
 		return u;
 	} catch (e) {
 		return e;
